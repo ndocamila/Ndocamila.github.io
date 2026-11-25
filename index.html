@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu Nome · Inteligência de mercado e dados</title>
+<meta name="description" content="Portfólio de projetos em inteligência de mercado e ciência de dados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f5f8; --surface:#ffffff; --ink:#14213d; --muted:#51607a; --line:#d5dce6;
+  --accent:#2b59ff; --accent-ink:#ffffff;
+  --plan:#8a6d00; --plan-bg:#fff3c4;
+  --doing:#0a5bd8; --doing-bg:#dbe7ff;
+  --done:#0b6b3a; --done-bg:#d3f2e0;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1624; --surface:#172033; --ink:#e8edf6; --muted:#9aa8c2; --line:#2a3752;
+    --accent:#6f93ff; --accent-ink:#0f1624;
+    --plan:#f0cf5a; --plan-bg:#3a3213;
+    --doing:#9db9ff; --doing-bg:#1c2f5c;
+    --done:#7fdca6; --done-bg:#163b29;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1624; --surface:#172033; --ink:#e8edf6; --muted:#9aa8c2; --line:#2a3752;
+  --accent:#6f93ff; --accent-ink:#0f1624;
+  --plan:#f0cf5a; --plan-bg:#3a3213;
+  --doing:#9db9ff; --doing-bg:#1c2f5c;
+  --done:#7fdca6; --done-bg:#163b29;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:1.15rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
+
+header.top{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
+.brand{font-family:var(--display);font-weight:700;text-decoration:none;font-size:1.05rem}
+nav{display:flex;gap:1.25rem;align-items:center;font-family:var(--display);font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+.hero{padding:4.5rem 0 3rem}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,6.5vw,3.6rem);line-height:1.06;letter-spacing:-.025em;margin:0 0 1.25rem;max-width:18ch}
+.hero p{max-width:34rem;margin:0 0 1.75rem;color:var(--muted);font-size:1.25rem}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;font-family:var(--display);font-size:.98rem}
+.btn{display:inline-block;padding:.65rem 1.1rem;border-radius:8px;text-decoration:none;font-weight:500;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(1.08)}
+
+section{padding:2.5rem 0}
+h2{font-family:var(--display);font-size:1.7rem;letter-spacing:-.015em;margin:0 0 .5rem}
+.lead{color:var(--muted);margin:0 0 1.5rem;max-width:36rem}
+
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;font-family:var(--display)}
+.filters button{font:inherit;font-size:.9rem;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+ul.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.project{padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.project[hidden]{display:none}
+.project .row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.project h3{font-family:var(--display);font-size:1.25rem;margin:0;letter-spacing:-.01em}
+.project h3 a{text-decoration:none;border-bottom:2px solid transparent}
+.project h3 a:hover{border-color:var(--accent)}
+.status{font-family:var(--display);font-size:.82rem;font-weight:500;padding:.18rem .6rem;border-radius:999px;white-space:nowrap}
+.s-plan{background:var(--plan-bg);color:var(--plan)}
+.s-doing{background:var(--doing-bg);color:var(--doing)}
+.s-done{background:var(--done-bg);color:var(--done)}
+.project p{margin:.45rem 0 .6rem;max-width:38rem}
+.stack{font-family:var(--display);font-size:.88rem;color:var(--muted)}
+.empty{color:var(--muted);padding:1.25rem 0}
+
+.about p{max-width:38rem;margin:0 0 1rem}
+.links{display:flex;gap:1.25rem;flex-wrap:wrap;font-family:var(--display);margin-top:1.25rem}
+.links a{font-weight:500;border-bottom:2px solid var(--accent);text-decoration:none}
+
+footer{border-top:1px solid var(--line);padding:1.75rem 0 3rem;color:var(--muted);font-family:var(--display);font-size:.9rem}
+@media (max-width:520px){nav{gap:.9rem}.hero{padding-top:3rem}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Seu Nome</a>
+    <nav aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="https://github.com/seu-usuario">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero" id="inicio">
+      <h1>Transformo perguntas de mercado em análises que sustentam decisões.</h1>
+      <p>Trabalho com inteligência de mercado e estou construindo, em público, projetos de SQL, Python e ciência de dados aplicados a marketing.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="#sobre">Sobre mim</a>
+      </div>
+    </div>
+
+    <section id="projetos" aria-labelledby="t-proj">
+      <h2 id="t-proj">Projetos</h2>
+      <p class="lead">Cada projeto parte de uma pergunta de negócio e tem repositório próprio, com dados, método e resultado no README.</p>
+
+      <div class="filters" role="group" aria-label="Filtrar por status">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="plan" aria-pressed="false">Planejado</button>
+        <button type="button" data-f="doing" aria-pressed="false">Em andamento</button>
+        <button type="button" data-f="done" aria-pressed="false">Concluído</button>
+      </div>
+
+      <ul class="projects" id="lista">
+        <li class="project" data-s="doing">
+          <div class="row">
+            <h3><a href="https://github.com/seu-usuario/sql-window-functions">Análise de vendas com SQL e window functions</a></h3>
+            <span class="status s-doing">Em andamento</span>
+          </div>
+          <p>Como as vendas evoluem por período e por segmento? Limpeza de dados e análise de tendência e ranking com OVER e PARTITION BY.</p>
+          <div class="stack">SQL · PostgreSQL</div>
+        </li>
+        <li class="project" data-s="plan">
+          <div class="row">
+            <h3><a href="https://github.com/seu-usuario/monitor-concorrentes">Monitor de concorrentes com scraping e LLM</a></h3>
+            <span class="status s-plan">Planejado</span>
+          </div>
+          <p>O que os concorrentes estão lançando e comunicando? Coleta de páginas públicas e classificação automática de temas e mensagens.</p>
+          <div class="stack">Python · requests · pandas · LLM</div>
+        </li>
+        <li class="project" data-s="plan">
+          <div class="row">
+            <h3><a href="https://github.com/seu-usuario/segmentacao-clv">Segmentação de clientes e CLV</a></h3>
+            <span class="status s-plan">Planejado</span>
+          </div>
+          <p>Quais clientes valem mais ao longo do tempo? Segmentação por comportamento e estimativa de valor do cliente.</p>
+          <div class="stack">Python · scikit-learn · pandas</div>
+        </li>
+        <li class="project" data-s="plan">
+          <div class="row">
+            <h3><a href="https://github.com/seu-usuario/tendencias-trends">Painel de tendências com Google Trends</a></h3>
+            <span class="status s-plan">Planejado</span>
+          </div>
+          <p>Que temas ganham ou perdem interesse no meu mercado? Série temporal de buscas, sazonalidade e alertas de mudança.</p>
+          <div class="stack">Python · SQL · visualização</div>
+        </li>
+        <li class="project" data-s="plan">
+          <div class="row">
+            <h3><a href="https://github.com/seu-usuario/mmm-basico">Modelo de mix de marketing (MMM) básico</a></h3>
+            <span class="status s-plan">Planejado</span>
+          </div>
+          <p>Qual canal realmente gera incremento de vendas? Modelo bayesiano simples com dados simulados e leitura dos resultados para o negócio.</p>
+          <div class="stack">Python · PyMC-Marketing · estatística</div>
+        </li>
+      </ul>
+      <p class="empty" id="vazio" hidden>Nenhum projeto com esse status ainda.</p>
+    </section>
+
+    <section id="sobre" class="about" aria-labelledby="t-sobre">
+      <h2 id="t-sobre">Sobre</h2>
+      <p>Sou profissional de inteligência de mercado e estou ampliando meu trabalho para dados: SQL, Python e estatística. Meu foco é ligar a pergunta de negócio ao método certo e comunicar o resultado de forma clara.</p>
+      <p>Este site é o meu roadmap público. Os projetos aparecem como planejados enquanto estudo, e mudam de status conforme avanço.</p>
+      <div class="links">
+        <a href="https://github.com/seu-usuario">GitHub</a>
+        <a href="https://www.linkedin.com/in/seu-perfil">LinkedIn</a>
+        <a href="mailto:seu@email.com">E-mail</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="ano">2026</span> Seu Nome</div>
+</footer>
+
+<script>
+(function(){
+  var botoes = document.querySelectorAll(".filters button");
+  var itens = document.querySelectorAll(".project");
+  var vazio = document.getElementById("vazio");
+  botoes.forEach(function(b){
+    b.addEventListener("click", function(){
+      var f = b.getAttribute("data-f"), visiveis = 0;
+      botoes.forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      itens.forEach(function(li){
+        var mostra = f === "todos" || li.getAttribute("data-s") === f;
+        li.hidden = !mostra;
+        if (mostra) visiveis++;
+      });
+      vazio.hidden = visiveis !== 0;
+    });
+  });
+  document.getElementById("ano").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
