@@ -1,210 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Seu Nome · Inteligência de mercado e dados</title>
-<meta name="description" content="Portfólio de projetos em inteligência de mercado e ciência de dados.">
+<title>Camila · Market intelligence &amp; data science</title>
+<meta name="description" content="Portfolio of market intelligence and data science projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f2f5f8; --surface:#ffffff; --ink:#14213d; --muted:#51607a; --line:#d5dce6;
-  --accent:#2b59ff; --accent-ink:#ffffff;
-  --plan:#8a6d00; --plan-bg:#fff3c4;
-  --doing:#0a5bd8; --doing-bg:#dbe7ff;
-  --done:#0b6b3a; --done-bg:#d3f2e0;
-  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-  --text:"Newsreader",Georgia,"Times New Roman",serif;
+  --bg:#fcf8fd;--surface:#fff;--ink:#2a1538;--muted:#665275;--line:#e6d8ec;--accent:#8e2f8a;--accent-ink:#fff;--warm:#7a52b8;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--text:"Newsreader",Georgia,serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0f1624; --surface:#172033; --ink:#e8edf6; --muted:#9aa8c2; --line:#2a3752;
-    --accent:#6f93ff; --accent-ink:#0f1624;
-    --plan:#f0cf5a; --plan-bg:#3a3213;
-    --doing:#9db9ff; --doing-bg:#1c2f5c;
-    --done:#7fdca6; --done-bg:#163b29;
-  }
-}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#150c1d;--surface:#20122c;--ink:#f1e6f6;--muted:#b9a5c8;--line:#382248;--accent:#e08bd4;--accent-ink:#150c1d;--warm:#b79cf0}}
 :root[data-theme="dark"]{
-  --bg:#0f1624; --surface:#172033; --ink:#e8edf6; --muted:#9aa8c2; --line:#2a3752;
-  --accent:#6f93ff; --accent-ink:#0f1624;
-  --plan:#f0cf5a; --plan-bg:#3a3213;
-  --doing:#9db9ff; --doing-bg:#1c2f5c;
-  --done:#7fdca6; --done-bg:#163b29;
-}
+  --bg:#150c1d;--surface:#20122c;--ink:#f1e6f6;--muted:#b9a5c8;--line:#382248;--accent:#e08bd4;--accent-ink:#150c1d;--warm:#b79cf0}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:1.15rem;line-height:1.6}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{max-width:46rem;margin:0 auto;padding:0 1.25rem}
-
+.wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
 header.top{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
-.brand{font-family:var(--display);font-weight:700;text-decoration:none;font-size:1.05rem}
-nav{display:flex;gap:1.25rem;align-items:center;font-family:var(--display);font-size:.95rem}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--ink)}
-
-.hero{padding:4.5rem 0 3rem}
-.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,6.5vw,3.6rem);line-height:1.06;letter-spacing:-.025em;margin:0 0 1.25rem;max-width:18ch}
-.hero p{max-width:34rem;margin:0 0 1.75rem;color:var(--muted);font-size:1.25rem}
-.cta{display:flex;gap:.75rem;flex-wrap:wrap;font-family:var(--display);font-size:.98rem}
-.btn{display:inline-block;padding:.65rem 1.1rem;border-radius:8px;text-decoration:none;font-weight:500;border:1px solid var(--ink)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn:hover{filter:brightness(1.08)}
-
+.brand{font-family:var(--display);font-weight:700;text-decoration:none}
+nav{display:flex;gap:1.25rem;font-family:var(--display);font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.banner{display:block;width:100%;height:auto;margin-top:1.5rem;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.grid-l{stroke:var(--line);stroke-width:1}
+.ln{fill:none;stroke:var(--muted);stroke-width:1.2;opacity:.35;stroke-linejoin:round}
+.ln.a{stroke:var(--accent);stroke-width:3.2;opacity:1}
+.ln.w{stroke:var(--warm);stroke-width:2.2;opacity:.95}
+.area{fill:var(--accent);opacity:.12}
+.dot{fill:var(--accent)}
+.ring{fill:var(--surface);stroke:var(--accent);stroke-width:3}
+.hero{padding:2rem 0 1.5rem}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,7vw,3.8rem);line-height:1.05;letter-spacing:-.025em;margin:0 0 .5rem}
+.tag{font-size:1.3rem;color:var(--muted);margin:0 0 1.5rem}
+.social{display:flex;gap:.6rem;flex-wrap:wrap;font-family:var(--display);font-size:.95rem}
+.social a{padding:.5rem 1rem;border-radius:8px;border:1px solid var(--ink);text-decoration:none;font-weight:500}
+.social a:first-child{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.social a:hover{filter:brightness(1.1)}
 section{padding:2.5rem 0}
 h2{font-family:var(--display);font-size:1.7rem;letter-spacing:-.015em;margin:0 0 .5rem}
-.lead{color:var(--muted);margin:0 0 1.5rem;max-width:36rem}
-
-.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;font-family:var(--display)}
+.lead{color:var(--muted);margin:0 0 1.25rem;max-width:36rem}
+.about p{max-width:38rem;margin:0 0 1rem}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem;font-family:var(--display)}
 .filters button{font:inherit;font-size:.9rem;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-
-ul.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.project{padding:1.4rem 0;border-bottom:1px solid var(--line)}
-.project[hidden]{display:none}
-.project .row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
-.project h3{font-family:var(--display);font-size:1.25rem;margin:0;letter-spacing:-.01em}
-.project h3 a{text-decoration:none;border-bottom:2px solid transparent}
-.project h3 a:hover{border-color:var(--accent)}
-.status{font-family:var(--display);font-size:.82rem;font-weight:500;padding:.18rem .6rem;border-radius:999px;white-space:nowrap}
-.s-plan{background:var(--plan-bg);color:var(--plan)}
-.s-doing{background:var(--doing-bg);color:var(--doing)}
-.s-done{background:var(--done-bg);color:var(--done)}
-.project p{margin:.45rem 0 .6rem;max-width:38rem}
-.stack{font-family:var(--display);font-size:.88rem;color:var(--muted)}
-.empty{color:var(--muted);padding:1.25rem 0}
-
-.about p{max-width:38rem;margin:0 0 1rem}
-.links{display:flex;gap:1.25rem;flex-wrap:wrap;font-family:var(--display);margin-top:1.25rem}
-.links a{font-weight:500;border-bottom:2px solid var(--accent);text-decoration:none}
-
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.5rem}
+.card[hidden]{display:none}
+.card h3{font-family:var(--display);font-size:1.1rem;margin:0;line-height:1.25}
+.card h3 a{text-decoration:none}.card h3 a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.card p{margin:0;font-size:1.02rem;color:var(--muted);flex:1}
+.meta{display:flex;justify-content:space-between;gap:.5rem;font-family:var(--display);font-size:.82rem;color:var(--muted)}
+.st{font-weight:500;color:var(--accent)}
+.empty{color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:1.75rem 0 3rem;color:var(--muted);font-family:var(--display);font-size:.9rem}
-@media (max-width:520px){nav{gap:.9rem}.hero{padding-top:3rem}}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#home">Camila</a>
+  <nav aria-label="Main"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a></nav>
+</div></header>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#inicio">Seu Nome</a>
-    <nav aria-label="Principal">
-      <a href="#projetos">Projetos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="https://github.com/seu-usuario">GitHub</a>
-    </nav>
+<main><div class="wrap">
+
+<div class="hero" id="home">
+  <svg class="banner" id="banner" viewBox="0 0 800 240" role="img" aria-label="Abstract chart of trend lines with a portrait of Camila on the right"></svg>
+  <h1 style="margin-top:1.75rem">Camila</h1>
+  <p class="tag">Turning market questions into data-driven decisions</p>
+  <div class="social">
+    <a href="https://github.com/ndocamila">GitHub</a>
+    <a href="https://www.kaggle.com/YOUR-KAGGLE-USERNAME">Kaggle</a>
+    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-PROFILE">LinkedIn</a>
   </div>
-</header>
+</div>
 
-<main>
-  <div class="wrap">
+<section id="about" class="about" aria-labelledby="t-about">
+  <h2 id="t-about">About</h2>
+  <p>I work in market intelligence and I’m expanding into data science, with a focus on SQL, Python and statistics. I like connecting a business question to the right method and explaining the result clearly.</p>
+  <p>This site is my public roadmap. Projects are listed as planned while I study, and their status changes as I make progress.</p>
+</section>
 
-    <div class="hero" id="inicio">
-      <h1>Transformo perguntas de mercado em análises que sustentam decisões.</h1>
-      <p>Trabalho com inteligência de mercado e estou construindo, em público, projetos de SQL, Python e ciência de dados aplicados a marketing.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projetos">Ver projetos</a>
-        <a class="btn" href="#sobre">Sobre mim</a>
-      </div>
-    </div>
-
-    <section id="projetos" aria-labelledby="t-proj">
-      <h2 id="t-proj">Projetos</h2>
-      <p class="lead">Cada projeto parte de uma pergunta de negócio e tem repositório próprio, com dados, método e resultado no README.</p>
-
-      <div class="filters" role="group" aria-label="Filtrar por status">
-        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
-        <button type="button" data-f="plan" aria-pressed="false">Planejado</button>
-        <button type="button" data-f="doing" aria-pressed="false">Em andamento</button>
-        <button type="button" data-f="done" aria-pressed="false">Concluído</button>
-      </div>
-
-      <ul class="projects" id="lista">
-        <li class="project" data-s="doing">
-          <div class="row">
-            <h3><a href="https://github.com/seu-usuario/sql-window-functions">Análise de vendas com SQL e window functions</a></h3>
-            <span class="status s-doing">Em andamento</span>
-          </div>
-          <p>Como as vendas evoluem por período e por segmento? Limpeza de dados e análise de tendência e ranking com OVER e PARTITION BY.</p>
-          <div class="stack">SQL · PostgreSQL</div>
-        </li>
-        <li class="project" data-s="plan">
-          <div class="row">
-            <h3><a href="https://github.com/seu-usuario/monitor-concorrentes">Monitor de concorrentes com scraping e LLM</a></h3>
-            <span class="status s-plan">Planejado</span>
-          </div>
-          <p>O que os concorrentes estão lançando e comunicando? Coleta de páginas públicas e classificação automática de temas e mensagens.</p>
-          <div class="stack">Python · requests · pandas · LLM</div>
-        </li>
-        <li class="project" data-s="plan">
-          <div class="row">
-            <h3><a href="https://github.com/seu-usuario/segmentacao-clv">Segmentação de clientes e CLV</a></h3>
-            <span class="status s-plan">Planejado</span>
-          </div>
-          <p>Quais clientes valem mais ao longo do tempo? Segmentação por comportamento e estimativa de valor do cliente.</p>
-          <div class="stack">Python · scikit-learn · pandas</div>
-        </li>
-        <li class="project" data-s="plan">
-          <div class="row">
-            <h3><a href="https://github.com/seu-usuario/tendencias-trends">Painel de tendências com Google Trends</a></h3>
-            <span class="status s-plan">Planejado</span>
-          </div>
-          <p>Que temas ganham ou perdem interesse no meu mercado? Série temporal de buscas, sazonalidade e alertas de mudança.</p>
-          <div class="stack">Python · SQL · visualização</div>
-        </li>
-        <li class="project" data-s="plan">
-          <div class="row">
-            <h3><a href="https://github.com/seu-usuario/mmm-basico">Modelo de mix de marketing (MMM) básico</a></h3>
-            <span class="status s-plan">Planejado</span>
-          </div>
-          <p>Qual canal realmente gera incremento de vendas? Modelo bayesiano simples com dados simulados e leitura dos resultados para o negócio.</p>
-          <div class="stack">Python · PyMC-Marketing · estatística</div>
-        </li>
-      </ul>
-      <p class="empty" id="vazio" hidden>Nenhum projeto com esse status ainda.</p>
-    </section>
-
-    <section id="sobre" class="about" aria-labelledby="t-sobre">
-      <h2 id="t-sobre">Sobre</h2>
-      <p>Sou profissional de inteligência de mercado e estou ampliando meu trabalho para dados: SQL, Python e estatística. Meu foco é ligar a pergunta de negócio ao método certo e comunicar o resultado de forma clara.</p>
-      <p>Este site é o meu roadmap público. Os projetos aparecem como planejados enquanto estudo, e mudam de status conforme avanço.</p>
-      <div class="links">
-        <a href="https://github.com/seu-usuario">GitHub</a>
-        <a href="https://www.linkedin.com/in/seu-perfil">LinkedIn</a>
-        <a href="mailto:seu@email.com">E-mail</a>
-      </div>
-    </section>
-
+<section id="projects" aria-labelledby="t-proj">
+  <h2 id="t-proj">Projects</h2>
+  <p class="lead">A selection of my SQL, Python and marketing analytics projects. Each one starts from a business question and has its own repository.</p>
+  <div class="filters" role="group" aria-label="Filter by category">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="SQL" aria-pressed="false">SQL</button>
+    <button type="button" data-f="Python" aria-pressed="false">Python</button>
+    <button type="button" data-f="Marketing" aria-pressed="false">Marketing analytics</button>
   </div>
-</main>
+  <ul class="grid" id="grid">
+    <li class="card" data-c="SQL">
+      <h3><a href="https://github.com/ndocamila/sql-window-functions">Sales analysis with SQL window functions</a></h3>
+      <p>How do sales evolve by period and segment? Data cleaning, trends and rankings with OVER and PARTITION BY.</p>
+      <div class="meta"><span>SQL · PostgreSQL</span><span class="st">In progress</span></div>
+    </li>
+    <li class="card" data-c="Python Marketing">
+      <h3><a href="https://github.com/ndocamila/competitor-monitor">Competitor monitor with scraping and LLMs</a></h3>
+      <p>What are competitors launching and saying? Collecting public pages and classifying topics and messages automatically.</p>
+      <div class="meta"><span>Python · pandas · LLM</span><span class="st">Planned</span></div>
+    </li>
+    <li class="card" data-c="Python Marketing">
+      <h3><a href="https://github.com/ndocamila/customer-segmentation-clv">Customer segmentation and CLV</a></h3>
+      <p>Which customers are worth the most over time? Behavioural segments and customer lifetime value estimates.</p>
+      <div class="meta"><span>Python · scikit-learn</span><span class="st">Planned</span></div>
+    </li>
+    <li class="card" data-c="Python SQL">
+      <h3><a href="https://github.com/ndocamila/google-trends-dashboard">Google Trends dashboard</a></h3>
+      <p>Which topics are gaining or losing interest in my market? Time series, seasonality and change alerts.</p>
+      <div class="meta"><span>Python · SQL</span><span class="st">Planned</span></div>
+    </li>
+    <li class="card" data-c="Python Marketing">
+      <h3><a href="https://github.com/ndocamila/basic-mmm">Basic marketing mix model</a></h3>
+      <p>Which channel really drives incremental sales? A simple Bayesian model on simulated data, with results explained for the business.</p>
+      <div class="meta"><span>Python · PyMC-Marketing</span><span class="st">Planned</span></div>
+    </li>
+  </ul>
+  <p class="empty" id="empty" hidden>No projects in this category yet.</p>
+</section>
 
-<footer>
-  <div class="wrap">© <span id="ano">2026</span> Seu Nome</div>
-</footer>
+</div></main>
+
+<footer><div class="wrap">© <span id="yr">2026</span> Camila</div></footer>
 
 <script>
 (function(){
-  var botoes = document.querySelectorAll(".filters button");
-  var itens = document.querySelectorAll(".project");
-  var vazio = document.getElementById("vazio");
-  botoes.forEach(function(b){
-    b.addEventListener("click", function(){
-      var f = b.getAttribute("data-f"), visiveis = 0;
-      botoes.forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-      itens.forEach(function(li){
-        var mostra = f === "todos" || li.getAttribute("data-s") === f;
-        li.hidden = !mostra;
-        if (mostra) visiveis++;
-      });
-      vazio.hidden = visiveis !== 0;
-    });
-  });
-  document.getElementById("ano").textContent = new Date().getFullYear();
+  // Banner: abstract trend lines (portrait file: foto.jpg)
+  var svg=document.getElementById("banner"),out="",s=11;
+  function rnd(){s=(s*9301+49297)%233280;return s/233280}
+  for(var g=1;g<5;g++)out+='<line class="grid-l" x1="0" x2="800" y1="'+g*48+'" y2="'+g*48+'"/>';
+  function series(base,amp,trend,w){
+    var p1=rnd()*6,p2=rnd()*6,f1=.012+rnd()*.01,f2=.03+rnd()*.02,pts=[];
+    for(var x=0;x<=800;x+=8){var y=base+trend*(x/800)+amp*Math.sin(x*f1+p1)+amp*.45*Math.sin(x*f2+p2);pts.push([x,y])}
+    return pts}
+  function path(pts){return pts.map(function(q){return q[0]+","+q[1].toFixed(1)}).join(" ")}
+  for(var i=0;i<7;i++)out+='<polyline class="ln" points="'+path(series(60+i*20,16+rnd()*10,-10+rnd()*20))+'"/>';
+  var A=series(170,20,-70),W=series(120,18,-30);
+  out+='<polygon class="area" points="'+path(A)+' 800,240 0,240"/>';
+  out+='<polyline class="ln w" points="'+path(W)+'"/><polyline class="ln a" points="'+path(A)+'"/>';
+  var px=670,py=120,pr=84;
+  out+='<circle class="ring" cx="'+px+'" cy="'+py+'" r="'+(pr+8)+'"/>'+
+       '<defs><clipPath id="pc"><circle cx="'+px+'" cy="'+py+'" r="'+pr+'"/></clipPath></defs>'+
+       '<circle cx="'+px+'" cy="'+py+'" r="'+pr+'" fill="var(--line)"/>'+
+       '<image href="foto.jpg" x="'+(px-pr)+'" y="'+(py-pr)+'" width="'+2*pr+'" height="'+2*pr+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#pc)"/>';
+  svg.innerHTML=out;
+
+  var btns=document.querySelectorAll(".filters button"),cards=document.querySelectorAll(".card"),empty=document.getElementById("empty");
+  btns.forEach(function(b){b.addEventListener("click",function(){
+    var f=b.getAttribute("data-f"),n=0;
+    btns.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    cards.forEach(function(c){var show=f==="all"||c.getAttribute("data-c").split(" ").indexOf(f)>-1;c.hidden=!show;if(show)n++});
+    empty.hidden=n!==0;
+  })});
+  document.getElementById("yr").textContent=new Date().getFullYear();
 })();
 </script>
 </body>
